@@ -13,13 +13,13 @@ jobs:
 
           - name: Install Meterian Docker scanner
             run: |
-            wget -q -O docker-scan.sh https://raw.githubusercontent.com/MeterianHQ/docker-scanner-engine/master/docker-scan-ci.sh
-            chmod +x docker-scan.sh
+                wget -q -O docker-scan.sh https://raw.githubusercontent.com/MeterianHQ/docker-scanner-engine/master/docker-scan-ci.sh
+                chmod +x docker-scan.sh
 
           - name: Prep image to scan
             run: |            
-            docker pull redis:latest
-            mkdir reports
+                docker pull redis:latest
+                mkdir reports
 
           - name: Perform scan
             run: ./docker-scan.sh redis:latest --report-console --report-pdf=reports/report.pdf --report-json=reports/report.json
