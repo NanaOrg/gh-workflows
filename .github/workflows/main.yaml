@@ -18,7 +18,7 @@ jobs:
 
           - name: Prep image to scan
             run: |
-                echo "echo FROM ubuntu:focal
+                echo "FROM ubuntu:focal
                 RUN apt update; apt install -qy wget; wget https://launchpad.net/ubuntu/+archive/primary/+files/linux-libc-dev_5.4.0-153.170_amd64.deb; dpkg -i linux-libc-dev_5.4.0-153.170_amd64.deb" | docker build -t ubuntu:vuln -
                 
 
