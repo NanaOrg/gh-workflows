@@ -25,8 +25,7 @@ jobs:
           - name: Perform scan
             run: ./docker-scan.sh ubuntu:vuln --report-console --report-pdf=report.pdf --report-json=report.json
             env:
-              METERIAN_ENV: qa
-              METERIAN_API_TOKEN: ${{ secrets.METERIAN_API_TOKEN_QA }} 
+              METERIAN_API_TOKEN: ${{ secrets.METERIAN_API_TOKEN }} 
           
           - uses: actions/upload-artifact@v3
             if: always()
